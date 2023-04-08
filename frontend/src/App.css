@@ -90,64 +90,6 @@
   .btn-submit:hover {
   background-color: #3071a9;
   }
-
-
-
-
-/* Location form styles: */
-
-
-  .location-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: gray;
-  }
-  
-  .location-heading {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .location-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .location-form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  .location-label {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  .location-input {
-    font-size: 16px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 300px;
-  }
-  
-  .location-button {
-    background-color: #0077c2;
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom:30px ;
-  }
-  
-  .location-button:hover {
-    background-color: #005fa3;
-  }
   
 
   /* Table Styles */
@@ -302,4 +244,132 @@
 
 .btn-danger:hover {
   background-color: #d32f2f;
+}
+
+
+
+
+/* Location component styling */
+
+.location-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  
+}
+
+.location-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.location-form {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  margin-bottom: 20px;
+  width: 80%;
+  max-width: 600px;
+  background-color: burlywood;
+
+}
+
+.location-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.location-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.location-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.btn-submit {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #0069d9;
+}
+
+.location-list-container {
+  width: 80%;
+  max-width: 600px;
+}
+
+.location-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.location-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.location-details {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.location-details-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.location-details-text {
+  font-size: 16px;
+  margin: 0;
+}
+
+.location-actions {
+  display: flex;
+}
+
+.location-action-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.location-edit-btn {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.location-delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.location-action-btn:hover {
+  opacity: 0.8;
 }

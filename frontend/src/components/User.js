@@ -180,7 +180,7 @@ function User() {
                                 <td>{user.email}</td>
                                 <td>{user.contactNumber}</td>
                                 <td>{user.role}</td>
-                                <td>{user.location.city}</td>
+                                {/* <td>{user.location.city}</td> */}
                                 <td>
                                     <button
                                         className="btn btn-warning"
