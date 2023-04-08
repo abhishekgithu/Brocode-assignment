@@ -2,16 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+require("dotenv").config();
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://admin:admin@cluster0.gecqij2.mongodb.net/?retryWrites=true&w=majority', {
+const PORT = process.env.PORT || 5000
+
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(()=>{console.log(`MongoDb Connected 🥳`);});
+}).then(() => { console.log(`MongoDb Connected 🥳`); });
 
 const Location = require('../models/location.model');
 const User = require('../models/user.model');
@@ -66,38 +69,38 @@ app.delete('/users/:id', async (req, res) => {
 
 // user chart data route
 app.get('/user-chart-data', async (req, res) => {
-    const users = await User.find().populate('location');
-    const data = {
-      labels: [],
-      datasets: [
-        {
-          label: 'Age',
-          data: [],
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          borderWidth: 1,
-        },
-        {
-          label: 'Contact Number',
-          data: [],
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1,
-        },
-      ],
-    };
-  
-    for (const user of users) {
-      data.labels.push(user.name);
-      data.datasets[0].data.push(user.age);
-      data.datasets[1].data.push(user.contactNumber);
-    }
-  
-    res.json(data);
-  });
-  
-  app.listen(5000, () => {
-    console.log('Server started on port 5000');
-  });
-  
-  
+  const users = await User.find().populate('location');
+  const data = {
+    labels: [],
+    datasets: [
+      {
+        label: 'Age',
+        data: [],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1,
+      },
+      {
+        label: 'Contact Number',
+        data: [],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  for (const user of users) {
+    data.labels.push(user.name);
+    data.datasets[0].data.push(user.age);
+    data.datasets[1].data.push(user.contactNumber);
+  }
+
+  res.json(data);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
+});
+
+
