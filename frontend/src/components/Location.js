@@ -80,7 +80,7 @@ function Location({ addLocation }) {
 
   return (
     <div className="location-container">
-      <h2 className="location-heading">Add Location</h2>
+      <h2 className="location-heading"> Location Page</h2>
       <form className="location-form" onSubmit={handleLocationSubmit}>
         <div className="location-form-group">
           <label htmlFor="name" className="location-label">
