@@ -4,6 +4,8 @@ import axios from "axios";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Location from "./components/Location";
 import User from "./components/User";
+import Home from "./components/Home";
+import { Link } from "react-router-dom";
 
 function App() {
   const [locations, setLocations] = useState([]);
@@ -48,7 +50,15 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <nav className="navbar">
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/locations">Location</Link>
+          <Link to="/users">User</Link>
+        </div>
+      </nav>
         <Routes>
+        <Route path="/" element={<Home />} />
           <Route exact path="/locations" element={<Location addLocation={addLocation} />} />
           <Route exact path="/users" element={<User addUser={addUser} />} />
         </Routes>

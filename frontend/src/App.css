@@ -374,3 +374,52 @@
 .location-action-btn:hover {
   opacity: 0.8;
 }
+
+
+
+
+/* Home styling */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 30px;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  margin: 0px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color:red;
+  text-decoration: none;
+  margin-left: 50px;
+}
+
+.content {
+  text-align: center;
+  margin-top: 50px;
+}
+div img{
+  width: 600px;
+  height:430px;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+li {
+  margin: 10px 0px;
+  font-size: 18px;
+}

@@ -181,7 +181,7 @@ function User() {
                 <td>{user.email}</td>
                 <td>{user.contactNumber}</td>
                 <td>{user.role}</td>
-                {/* <td>{user.location.city}</td> */}
+                {/* <td>{user.location}</td> */}
                 <td>
                   <button
                     className="btn btn-warning"
@@ -206,3 +206,5 @@ function User() {
 }
 
 export default User;
+
+
